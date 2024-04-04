@@ -1,0 +1,73 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   img.c                                              :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: erigonza <erigonza@student.42barcel>       +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2024/03/30 16:05:09 by erigonza          #+#    #+#             */
+/*   Updated: 2024/04/04 18:28:31 by erigonza         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
+#include "so_long.h"
+
+int	init_images(t_win *win)
+{
+	int	i;
+
+	i = -1;
+	win->map.sprites = malloc (MAX_SPRITES * sizeof(t_img));
+	if (!win->map.sprites)
+		exit (ft_fd_printf(2, "%s", ERROR_MALLOC) * 0 + 1);
+	while (++i < MAX_SPRITES)
+	{
+		win->map.sprites[i].img = mlx_xpm_file_to_image(win->mlx, get_path(i), \
+				&win->map.sprites[i].x, &win->map.sprites[i].y);
+	}
+	return (0);
+}
+
+void	print_img(t_win *win, int y, int x, int n)
+{
+	y = y * 32 + 25;
+	x = x * 32;
+//printf("mlx->%p\nwin->%p\nsprite->%p\n", win->mlx, win->win, win->map.sprites[n].img);
+	mlx_put_image_to_window(win->mlx, win->win, win->map.sprites[n].img, y, x);
+}
+
+void print_objects(t_win *win, int y, int x)
+{
+//	print_img(win, x, y, WALL_BLACK);
+	if (win->map.p[y][x] == '1')
+		print_img(win, x, y, WALL_BLACK);
+	if (win->map.p[y][x] == 'E')
+		print_img(win, x, y, EXIT);
+	if (win->map.p[y][x] == 'C')
+		print_img(win, x, y, DOT);
+	if (win->map.p[y][x] == 'G')
+		print_img(win, x, y, GHOST_1);
+	if (win->map.p[y][x] == '0')
+		print_img(win, x, y, 33);
+	if (win->map.p[y][x] == 'P')
+	{
+		win->map.p_x = x;
+		win->map.p_y = y;
+		print_img(win, x, y, PACMAN_1);
+	}
+}
+
+void put_base_map(t_win *win)
+{
+	int	y;
+	int	x;
+
+	y = -1;
+	while (++y < win->map.y)
+	{
+		x = -1;
+		while (++x < win->map.x)
+			print_objects(win, y, x);
+	}
+
+}
