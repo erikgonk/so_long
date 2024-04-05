@@ -30,6 +30,11 @@ int	init_images(t_win *win)
 
 void	print_img(t_win *win, int y, int x, int n)
 {
+	if (n >= 0 && n <= 8)
+	{
+		win->map.moves++;
+		printf("moves -> %d\n", win->map.moves);
+	}
 	y = y * 32 + 25;
 	x = x * 32;
 	mlx_put_image_to_window(win->mlx, win->win, win->map.sprites[n].img, y, x);
@@ -68,5 +73,4 @@ void put_base_map(t_win *win)
 		while (++x < win->map.x)
 			print_objects(win, y, x);
 	}
-
 }

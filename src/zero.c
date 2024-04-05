@@ -29,6 +29,7 @@ void  ft_zero(t_map *map, int fd)
 	map->p_y = 0;
 	map->points = 0;
 	map->paroimpar = 0;
+	map->moves = 0;
   save_line(map, fd);
 }
 

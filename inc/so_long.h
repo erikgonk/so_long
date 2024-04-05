@@ -171,6 +171,7 @@ typedef struct s_map {
 	int		p_x;
 	int		p_y;
 	int		points;
+	int		moves;
 	int		paroimpar;
 	t_img	*sprites;
 }	t_map;
@@ -191,10 +192,9 @@ int		correct_file(char *name);
 void	save_line(t_map *map, int fd);
 void	parsing(t_map *map);
 
-void	movement(t_win *win, int y, int x, int dir);
 void	check_map(t_win *win, int x, int y, int dir);
-
-char	*get_next_line(int fd);
+void	print_pac(t_win *win, int y, int x, int dir);
+void	movement(t_win *win, int y, int x, int dir);
 
 void  ft_zero(t_map *map, int fd);
 void  check_x(t_map *map);
@@ -202,6 +202,10 @@ void	init_global1(char **sprites);
 void	init_global2(char **sprites);
 char	*get_path(int n);
 
+void  pacman_move(t_win *win, int dir);
+
+char	*get_next_line(int fd);
+//
 void	*ft_calloc(int count, int size);
 int		ft_strlen(const char *s);
 char	*ft_strjoin(char const *s1, char const *s2);

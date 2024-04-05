@@ -19,16 +19,17 @@ int	exit_window(int value)
 
 int	key_hook(int keycode, t_win *win)
 {
+	printf("char -> %c\n", win->map.p[win->map.p_y][win->map.p_x]);
 	if (keycode == 53)
 		exit_window(0);
 	else if (keycode == 126 || keycode == 13)
-		movement(win, (win->map.p_y--), win->map.p_x, UP);
+		movement(win, (--win->map.p_y), win->map.p_x, UP);
 	else if (keycode == 124 || keycode == 2)
-		movement(win, win->map.p_y, (win->map.p_x++), RIGHT);
+		movement(win, win->map.p_y, (++win->map.p_x), RIGHT);
 	else if (keycode == 125 || keycode == 1)
-		movement(win, (win->map.p_y++), win->map.p_x, DOWN);
+		movement(win, (++win->map.p_y), win->map.p_x, DOWN);
 	else if (keycode == 123 || keycode == 0)
-		movement(win, win->map.p_y, (win->map.p_x--), LEFT);
+		movement(win, win->map.p_y, (--win->map.p_x), LEFT);
 	return (0);
 }
 
