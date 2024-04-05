@@ -24,7 +24,6 @@ int	init_images(t_win *win)
 	{
 		win->map.sprites[i].img = mlx_xpm_file_to_image(win->mlx, get_path(i), \
 				&win->map.sprites[i].x, &win->map.sprites[i].y);
-		printf("sprite -> %p      i -> %i -> path %s\n", win->map.sprites[i].img, i, get_path(i));
 	}
 	return (0);
 }

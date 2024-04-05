@@ -191,6 +191,9 @@ int		correct_file(char *name);
 void	save_line(t_map *map, int fd);
 void	parsing(t_map *map);
 
+void	movement(t_win *win, int y, int x, int dir);
+void	check_map(t_win *win, int x, int y, int dir);
+
 char	*get_next_line(int fd);
 
 void  ft_zero(t_map *map, int fd);
