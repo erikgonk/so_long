@@ -19,6 +19,7 @@ int	exit_window(int value)
 
 int	key_hook(int keycode, t_win *win)
 {
+	(void)win;
 	if (keycode == 53)
 		exit_window(0);
 	else if (keycode == 126 || keycode == 13)

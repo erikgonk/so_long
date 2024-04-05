@@ -20,69 +20,69 @@
 # include <fcntl.h>
 # include <stdlib.h>
 
-# define PACMAN_1 1
-# define PACMAN_2 2
-# define PACMAN_3 3
-# define PACMAN_4 4
-# define PACMAN_5 5
-# define PACMAN_6 6
-# define PACMAN_8 7
+# define PACMAN_R 0
+# define PACMAN_R0 1
+# define PACMAN_L 2
+# define PACMAN_L0 3
+# define PACMAN_D 4
+# define PACMAN_D0 5
+# define PACMAN_U 6
+# define PACMAN_U0 7
 # define PACMAN_9 8
-# define PACMAN_7 9
 //
-# define DPACMAN_1 10
-# define DPACMAN_2 11
-# define DPACMAN_4 12
-# define DPACMAN_6 13
-# define DPACMAN_8 14
-# define DPACMAN_W 15
-# define DPACMAN_10 16
-# define DPACMAN_3 17
-# define DPACMAN_5 18
-# define DPACMAN_7 19
-# define DPACMAN_9 20
+# define DPACMAN_1 9
+# define DPACMAN_2 10
+# define DPACMAN_4 11
+# define DPACMAN_6 12
+# define DPACMAN_8 13
+# define DPACMAN_W 14
+# define DPACMAN_10 15
+# define DPACMAN_3 16
+# define DPACMAN_5 17
+# define DPACMAN_7 18
+# define DPACMAN_9 19
 //
-# define FONT_0 21
-# define FONT_1 22
-# define FONT_2 23
-# define FONT_3 24
-# define FONT_4 25
-# define FONT_5 26
-# define FONT_6 27
-# define FONT_7 28
-# define FONT_8 29
-# define FONT_9 30
-# define FONT_B 31
+# define FONT_0 20
+# define FONT_1 21
+# define FONT_2 22
+# define FONT_3 23
+# define FONT_4 24
+# define FONT_5 25
+# define FONT_6 26
+# define FONT_7 27
+# define FONT_8 28
+# define FONT_9 29
+# define FONT_B 30
 //
+# define DOT 31
 # define EXIT 32
-# define DOT 33
 //
-# define WALL_BLACK 34 
-# define WALL 35
+# define WALL_BLACK 33 
+# define WALL 34
 //
-# define LOGO 36
+# define LOGO 35
 //
-# define GHOST_1 37 
-# define GHOST_2 38
-# define GHOST_3 39
-# define GHOST_4 40
-# define GHOST_5 41
-# define GHOST_6 42
-# define GHOST_7 43
-# define GHOST_8 44
+# define GHOST_1 36 
+# define GHOST_2 37
+# define GHOST_3 38
+# define GHOST_4 39
+# define GHOST_5 40
+# define GHOST_6 41
+# define GHOST_7 42
+# define GHOST_8 43
 //
 //
 //
 //
 // PAC-MAN
 # define sprite_1 "sprites/Pac-Man/pac_open_right.xpm"
-# define sprite_2 "sprites/Pac-Man/pac_open_down.xpm"
+# define sprite_2 "sprites/Pac-Man/pac_open_right.xpm"
 # define sprite_3 "sprites/Pac-Man/pac_open_left.xpm"
-# define sprite_4 "sprites/Pac-Man/pac_open_up.xpm"
-# define sprite_5 "sprites/Pac-Man/pac_open_semi_right.xpm"
-# define sprite_6 "sprites/Pac-Man/pac_open_semi_down.xpm"
-# define sprite_7 "sprites/Pac-Man/pac_open_semi_left.xpm"
-# define sprite_8 "sprites/Pac-Man/pac_semi_up.xpm.xpm"
+# define sprite_4 "sprites/Pac-Man/pac_open_left.xpm"
+# define sprite_5 "sprites/Pac-Man/pac_open_down.xpm"
+# define sprite_6 "sprites/Pac-Man/pac_open_down.xpm"
+# define sprite_7 "sprites/Pac-Man/pac_open_up.xpm"
+# define sprite_8 "sprites/Pac-Man/pac_semi_up.xpm"
 # define sprite_9 "sprites/Pac-Man/pac_closed.xpm"
 // PAC-MAN DEATH
 # define sprite_10 "sprites/Pac-Man/Dying/pacman_dying1.xpm"

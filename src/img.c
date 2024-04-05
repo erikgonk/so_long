@@ -24,6 +24,7 @@ int	init_images(t_win *win)
 	{
 		win->map.sprites[i].img = mlx_xpm_file_to_image(win->mlx, get_path(i), \
 				&win->map.sprites[i].x, &win->map.sprites[i].y);
+		printf("sprite -> %p      i -> %i -> path %s\n", win->map.sprites[i].img, i, get_path(i));
 	}
 	return (0);
 }
@@ -32,15 +33,14 @@ void	print_img(t_win *win, int y, int x, int n)
 {
 	y = y * 32 + 25;
 	x = x * 32;
-//printf("mlx->%p\nwin->%p\nsprite->%p\n", win->mlx, win->win, win->map.sprites[n].img);
 	mlx_put_image_to_window(win->mlx, win->win, win->map.sprites[n].img, y, x);
 }
 
 void print_objects(t_win *win, int y, int x)
 {
-//	print_img(win, x, y, WALL_BLACK);
+	print_img(win, x, y, WALL_BLACK);
 	if (win->map.p[y][x] == '1')
-		print_img(win, x, y, WALL_BLACK);
+		print_img(win, x, y, WALL);
 	if (win->map.p[y][x] == 'E')
 		print_img(win, x, y, EXIT);
 	if (win->map.p[y][x] == 'C')
@@ -48,12 +48,12 @@ void print_objects(t_win *win, int y, int x)
 	if (win->map.p[y][x] == 'G')
 		print_img(win, x, y, GHOST_1);
 	if (win->map.p[y][x] == '0')
-		print_img(win, x, y, 33);
+		print_img(win, x, y, DOT);
 	if (win->map.p[y][x] == 'P')
 	{
 		win->map.p_x = x;
 		win->map.p_y = y;
-		print_img(win, x, y, PACMAN_1);
+		print_img(win, x, y, PACMAN_R);
 	}
 }
 
