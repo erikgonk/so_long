@@ -173,6 +173,10 @@ typedef struct s_map {
 	int		points;
 	int		moves;
 	int		paroimpar;
+	int		a;
+	int		b;
+	int		c;
+	int		d;
 	t_img	*sprites;
 }	t_map;
 
@@ -183,16 +187,20 @@ typedef struct s_win
 	t_map	map;
 }	t_win;
 
-int	init_images(t_win *win);
+int		exit_window(int value);
+int		key_hook(int keycode, t_win *win);
+
+int		init_images(t_win *win);
 void	print_img(t_win *win, int y, int x, int n);
-void print_objects(t_win *win, int y, int x);
-void put_base_map(t_win *win);
+void	print_objects(t_win *win, int y, int x);
+void	put_base_map(t_win *win);
 
 int		correct_file(char *name);
 void	save_line(t_map *map, int fd);
 void	parsing(t_map *map);
 
 void	check_map(t_win *win, int x, int y, int dir);
+void	print_paco(t_win *win, int y, int x, int dir);
 void	print_pac(t_win *win, int y, int x, int dir);
 void	movement(t_win *win, int y, int x, int dir);
 
@@ -203,6 +211,9 @@ void	init_global2(char **sprites);
 char	*get_path(int n);
 
 void  pacman_move(t_win *win, int dir);
+void  print_death(t_win *win);
+void  change_font(t_win *win);
+void	get_abc(t_win *win);
 
 char	*get_next_line(int fd);
 //

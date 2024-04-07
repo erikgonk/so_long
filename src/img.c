@@ -30,11 +30,10 @@ int	init_images(t_win *win)
 
 void	print_img(t_win *win, int y, int x, int n)
 {
-	if (n >= 0 && n <= 8)
-	{
+	if ((n >= 0 && n <= 8) && win->map.moves != -1)
+		change_font(win);
+	if ((n >= 0 && n <= 8) && win->map.moves == -1)
 		win->map.moves++;
-		printf("moves -> %d\n", win->map.moves);
-	}
 	y = y * 32 + 25;
 	x = x * 32;
 	mlx_put_image_to_window(win->mlx, win->win, win->map.sprites[n].img, y, x);
@@ -52,7 +51,7 @@ void print_objects(t_win *win, int y, int x)
 	if (win->map.p[y][x] == 'G')
 		print_img(win, x, y, GHOST_1);
 	if (win->map.p[y][x] == '0')
-		print_img(win, x, y, DOT);
+		print_img(win, x, y, WALL_BLACK);
 	if (win->map.p[y][x] == 'P')
 	{
 		win->map.p_x = x;

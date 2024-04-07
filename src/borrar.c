@@ -10,7 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../inc/so_long.h"
+#include "so_long.h"
 
 typedef struct	s_data {
 	void	*img;

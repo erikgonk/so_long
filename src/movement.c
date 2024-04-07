@@ -14,7 +14,9 @@
 
 void	check_map(t_win *win, int y, int x, int dir)
 {
-	if (win->map.p[y][x] == '1')
+	if (win->map.c_count == win->map.points && win->map.p[y][x] == 'E')
+		exit(ft_fd_printf(1, "YOU WON!\n"));
+	if (win->map.p[y][x] == '1' || win->map.p[y][x] == 'E')
 	{
 		if (dir == RIGHT)
 			--win->map.p_x;
@@ -30,6 +32,33 @@ void	check_map(t_win *win, int y, int x, int dir)
 		win->map.event = 1;
 }
 
+void	print_paco(t_win *win, int y, int x, int dir)
+{
+	if (dir == RIGHT)
+	{
+		print_img(win, win->map.p_x, win->map.p_y, WALL_BLACK);
+		print_img(win, --x, y, WALL_BLACK);
+		print_img(win, win->map.p_x, win->map.p_y, PACMAN_9);
+	}
+	else if (dir == LEFT)
+	{
+			print_img(win, win->map.p_x, win->map.p_y, WALL_BLACK);
+			print_img(win, ++x, y, WALL_BLACK);
+			print_img(win, win->map.p_x, win->map.p_y, PACMAN_9);
+	}
+	else if (dir == UP)
+	{
+		print_img(win, win->map.p_x, win->map.p_y, WALL_BLACK);
+		print_img(win, x, ++y, WALL_BLACK);
+		print_img(win, win->map.p_x, win->map.p_y, PACMAN_9);
+	}
+	else if (dir == DOWN)
+	{
+		print_img(win, win->map.p_x, win->map.p_y, WALL_BLACK);
+		print_img(win, x, --y, WALL_BLACK);
+		print_img(win, win->map.p_x, win->map.p_y, PACMAN_9);
+	}
+}
 void	print_pac(t_win *win, int y, int x, int dir)
 {
 	if (dir == RIGHT)
@@ -61,13 +90,13 @@ void	print_pac(t_win *win, int y, int x, int dir)
 void	movement(t_win *win, int y, int x, int dir)
 {
 	check_map(win, y, x, dir);
-	// if (win->map.p[win->map.p_y][win->map.p_x] == 'C')
-	// {
-	// 	print_img(win, win->map.p_x, win->map.p_y, WALL_BLACK);
-	// 	win->map.points++;
-	// }
-	// else if (win->map.p[win->map.p_y][win->map.p_x] == 'G')
-	// 	exit(ft_fd_printf(1, "YOU LOST\n") * 0 + 1);
+	if (win->map.p[win->map.p_y][win->map.p_x] == 'C')
+	{
+		print_img(win, win->map.p_x, win->map.p_y, WALL_BLACK);
+		win->map.points++;
+	}
+	else if (win->map.p[win->map.p_y][win->map.p_x] == 'G')
+		print_death(win);
 	if (win->map.event == 0)
 		return ;
 	else

@@ -19,7 +19,7 @@ int	exit_window(int value)
 
 int	key_hook(int keycode, t_win *win)
 {
-	printf("char -> %c\n", win->map.p[win->map.p_y][win->map.p_x]);
+//	printf("char -> %c\n", win->map.p[win->map.p_y][win->map.p_x]);
 	if (keycode == 53)
 		exit_window(0);
 	else if (keycode == 126 || keycode == 13)
