@@ -138,15 +138,16 @@
 //
 //
 // ERRORS
-# define ERROR_ARGUMENTS "Error\nJust One Argument Is Admited"
-# define ERROR_NAME "Error\nCorrect Name"
-# define ERROR_OPEN "Error\nOpen Failed"
-# define ERROR_CLOSE "Error\nClose Failed"
-# define ERROR_SIZE "Error\nMap soo long ;)"
-# define ERROR_MAP_OBJECTS "Error\nThere Are Objects Left"
-# define ERROR_EMPTY_MAP "Error\nNew Line Empty"
-# define ERROR_MALLOC "Error\nMalloc Failed"
-# define ERROR_ADD_REMOVE_OBJECTS "Error\nAdd Or Remove Objects"
+# define ERROR_ARGUMENTS "Error\nJust One Argument Is Admited\n"
+# define ERROR_NAME "Error\nCorrect Name\n"
+# define ERROR_OPEN "Error\nOpen Failed\n"
+# define ERROR_CLOSE "Error\nClose Failed\n"
+# define ERROR_MAP_SIZE "Error\nMap Too Long\n"
+# define ERROR_MAP_OBJECTS "Error\nThere Are Objects Left\n"
+# define ERROR_EMPTY_MAP "Error\nNew Line Empty\n"
+# define ERROR_MALLOC "Error\nMalloc Failedn\n"
+# define ERROR_ADD_REMOVE_OBJECTS "Error\nAdd Or Remove Objects\n"
+# define ERROR_MAP_NOT_CLOSED "Error\nThe Map Has An Excape\n"
 
 typedef struct s_img
 {
@@ -205,7 +206,7 @@ void	print_pac(t_win *win, int y, int x, int dir);
 void	movement(t_win *win, int y, int x, int dir);
 
 void  ft_zero(t_map *map, int fd);
-void  check_x(t_map *map);
+// void  check_x(t_map *map);
 void	init_global1(char **sprites);
 void	init_global2(char **sprites);
 char	*get_path(int n);
@@ -214,6 +215,9 @@ void  pacman_move(t_win *win, int dir);
 void  print_death(t_win *win);
 void  change_font(t_win *win);
 void	get_abc(t_win *win);
+
+void	is_it_one(t_map *map);
+void	freewilly(t_map *map, int y);
 
 char	*get_next_line(int fd);
 //

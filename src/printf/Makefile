@@ -24,7 +24,7 @@ RM			= rm -rf
 INC			=  ft_printf.h\
 			   libft/libft.h
 
-SRCS		= ft_printf.c ft_putchar_error.c 
+SRCS		= ft_printf.c ft_putchar_error.c ft_strdup.c ft_strlen2.c
 OBJS		= $(SRCS:.c=.o)
 DEPS		= $(SRCS:.c=.d)
 

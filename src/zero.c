@@ -18,7 +18,7 @@ void  ft_zero(t_map *map, int fd)
   map->x = 0;
   map->x_max = 0;
   map->y = 0;
-  map->y_max = -1;
+  map->y_max = 0;
   map->bol = 1;
   map->event = 0;
   map->p_count = 0;
@@ -33,14 +33,14 @@ void  ft_zero(t_map *map, int fd)
   save_line(map, fd);
 }
 
-void  check_x(t_map *map)
-{
-  if (map->bol == 1)
-  {
-    map->x_max = map->x;
-    map->bol = 0;
-  }
-}
+// void  check_x(t_map *map)
+// {
+//   if (map->bol == 1)
+//   {
+//     map->x_max = map->x;
+//     map->bol = 0;
+//   }
+// }
 
 void	init_global1(char **sprites)
 {

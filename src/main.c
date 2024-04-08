@@ -19,7 +19,6 @@ int	exit_window(int value)
 
 int	key_hook(int keycode, t_win *win)
 {
-//	printf("char -> %c\n", win->map.p[win->map.p_y][win->map.p_x]);
 	if (keycode == 53)
 		exit_window(0);
 	else if (keycode == 126 || keycode == 13)
@@ -50,6 +49,7 @@ int main(int argc, char **argv)
 	win.mlx = mlx_init();
 	init_images(&win);
 	win.win = mlx_new_window(win.mlx, (win.map.x * 34), ((win.map.y * 32) + 75), "so_long");
+	printf("hello\n");
 	put_base_map(&win);
 	mlx_hook(win.win, 2, 0, key_hook, &win);
 	mlx_hook(win.win, 17, 0, exit_window, 0);
