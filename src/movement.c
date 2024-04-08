@@ -92,6 +92,7 @@ void	movement(t_win *win, int y, int x, int dir)
 	check_map(win, y, x, dir);
 	if (win->map.p[win->map.p_y][win->map.p_x] == 'C')
 	{
+		win->map.p[win->map.p_y][win->map.p_x] = '0';
 		print_img(win, win->map.p_x, win->map.p_y, WALL_BLACK);
 		win->map.points++;
 	}

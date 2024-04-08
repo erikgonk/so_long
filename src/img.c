@@ -66,10 +66,10 @@ void put_base_map(t_win *win)
 	int	x;
 
 	y = -1;
-	while (++y < win->map.y)
+	while (++y < win->map.y_max)
 	{
 		x = -1;
-		while (++x < win->map.x)
+		while (++x < win->map.x_max)
 			print_objects(win, y, x);
 	}
 }

@@ -48,8 +48,7 @@ int main(int argc, char **argv)
 		exit(ft_fd_printf(2, "%s", ERROR_CLOSE) * 0 + 1);
 	win.mlx = mlx_init();
 	init_images(&win);
-	win.win = mlx_new_window(win.mlx, (win.map.x * 34), ((win.map.y * 32) + 75), "so_long");
-	printf("hello\n");
+	win.win = mlx_new_window(win.mlx, (win.map.x_max * 34), ((win.map.y_max * 32) + 75), "so_long");
 	put_base_map(&win);
 	mlx_hook(win.win, 2, 0, key_hook, &win);
 	mlx_hook(win.win, 17, 0, exit_window, 0);

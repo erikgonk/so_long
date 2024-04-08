@@ -27,6 +27,7 @@ int	correct_file(char *name)
 
 void	save_line(t_map *map, int fd)
 {
+
 	char            *tmp;
 
 	map->p = malloc(sizeof (t_map));
@@ -44,12 +45,14 @@ void	save_line(t_map *map, int fd)
 		if (!map->p[map->y_max++])
 			break ;
 	}
+	// int a = -1;
+	// while (map->p[++a])
+		// printf("%s\n", map->p[a]);
 	parsing(map);
 }
 
 void	parsing(t_map *map)
 {
-
 	map->y = -1;
 	while (++map->y < map->y_max)
 	{
