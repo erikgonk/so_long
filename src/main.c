@@ -37,13 +37,14 @@ int main(int argc, char **argv)
   int			fd;
 	t_win		win;
 	fd = open(argv[1], O_RDONLY);
+	if (fd < 0)
+		exit(ft_fd_printf(2, "%s", ERROR_OPEN) * 0 + 1);
 	if (argc != 2)
 		exit(ft_fd_printf(2, "%s", ERROR_ARGUMENTS) * 0 + 1);
 	if (!correct_file(argv[1]))
 		exit(ft_fd_printf(2, "%s", ERROR_NAME) * 0 + 1);
-	if (fd < 0)
-		exit(ft_fd_printf(2, "%s", ERROR_OPEN) * 0 + 1);
 	ft_zero(&win.map, fd);
+	end_map(&win);
   if (close(fd))
 		exit(ft_fd_printf(2, "%s", ERROR_CLOSE) * 0 + 1);
 	win.mlx = mlx_init();

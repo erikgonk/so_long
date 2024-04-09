@@ -148,6 +148,7 @@
 # define ERROR_MALLOC "Error\nMalloc Failedn\n"
 # define ERROR_ADD_REMOVE_OBJECTS "Error\nAdd Or Remove Objects\n"
 # define ERROR_MAP_NOT_CLOSED "Error\nThe Map Has An Excape\n"
+# define ERROR_MAP_E_NOT_FOUND "Error\nExit Not Found\n"
 
 typedef struct s_img
 {
@@ -158,6 +159,7 @@ typedef struct s_img
 
 typedef struct s_map {
 	char	**p;
+	char	**p_c;
 	int		validated;
 	int		x;
 	int		x_max;
@@ -178,6 +180,7 @@ typedef struct s_map {
 	int		b;
 	int		c;
 	int		d;
+	int		e_found;
 	t_img	*sprites;
 }	t_map;
 
@@ -216,8 +219,13 @@ void  print_death(t_win *win);
 void  change_font(t_win *win);
 void	get_abc(t_win *win);
 
+void	end_map(t_win *win);
+void	floodfill(t_win *win, int y, int x, char *pass);
+void  last_checker(t_win *win, int x, int y);
+
 void	is_it_one(t_map *map);
 void	freewilly(t_map *map, int y);
+void	floodfill2(t_win *win, int y, int x, char *pass);
 
 char	*get_next_line(int fd);
 //

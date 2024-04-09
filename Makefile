@@ -25,7 +25,8 @@ MLX_A = $(addprefix $(MLX), libmlx.a)
 FTPRINTF = src/printf/
 FTPRINTF_A = $(addprefix $(FTPRINTF), libftprintf.a)
 
-SRC_NAMES = main.c valid_map.c img.c zero.c movement.c print_img.c extra.c\
+SRC_NAMES = main.c valid_map.c img.c zero.c movement.c print_img.c \
+			floodfill.c extra.c \
 			get_next_line.c get_next_line_utils.c \
 
 SRCS = $(addprefix src/, $(SRC_NAMES))

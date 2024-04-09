@@ -24,6 +24,8 @@ int	init_images(t_win *win)
 	{
 		win->map.sprites[i].img = mlx_xpm_file_to_image(win->mlx, get_path(i), \
 				&win->map.sprites[i].x, &win->map.sprites[i].y);
+		if (!win->map.sprites[i].img)
+			exit(ft_fd_printf(2, "ERROR\nImage") * 0 + 1);
 	}
 	return (0);
 }
@@ -41,6 +43,9 @@ void	print_img(t_win *win, int y, int x, int n)
 
 void print_objects(t_win *win, int y, int x)
 {
+	// int f = 0;
+  // while (win->map.p[f])
+  	// ft_fd_printf(1, "%s", win->map.p[6]);
 	print_img(win, x, y, WALL_BLACK);
 	if (win->map.p[y][x] == '1')
 		print_img(win, x, y, WALL);
