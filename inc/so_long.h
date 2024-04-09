@@ -6,19 +6,19 @@
 /*   By: erigonza <erigonza@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/01 14:12:13 by erigonza          #+#    #+#             */
-/*   Updated: 2024/04/04 18:41:06 by erigonza         ###   ########.fr       */
+/*   Updated: 2024/04/09 18:04:03 by erigonza         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef SO_LONG_H
 # define SO_LONG_H
 
-# include "mlx.h"
 # include "ft_printf.h"
-# include <unistd.h>
-# include <stdio.h>
+# include "mlx.h"
 # include <fcntl.h>
+# include <stdio.h>
 # include <stdlib.h>
+# include <unistd.h>
 
 # define PACMAN_R 0
 # define PACMAN_R0 1
@@ -57,12 +57,12 @@
 # define DOT 31
 # define EXIT 32
 //
-# define WALL_BLACK 33 
+# define WALL_BLACK 33
 # define WALL 34
 //
 # define LOGO 35
 //
-# define GHOST_1 36 
+# define GHOST_1 36
 # define GHOST_2 37
 # define GHOST_3 38
 # define GHOST_4 39
@@ -75,56 +75,56 @@
 //
 //
 // PAC-MAN
-# define sprite_1 "sprites/Pac-Man/pac_open_right.xpm"
-# define sprite_2 "sprites/Pac-Man/pac_open_right.xpm"
-# define sprite_3 "sprites/Pac-Man/pac_open_left.xpm"
-# define sprite_4 "sprites/Pac-Man/pac_open_left.xpm"
-# define sprite_5 "sprites/Pac-Man/pac_open_down.xpm"
-# define sprite_6 "sprites/Pac-Man/pac_open_down.xpm"
-# define sprite_7 "sprites/Pac-Man/pac_open_up.xpm"
-# define sprite_8 "sprites/Pac-Man/pac_semi_up.xpm"
-# define sprite_9 "sprites/Pac-Man/pac_closed.xpm"
+# define SPRITE_1 "sprites/Pac-Man/pac_open_right.xpm"
+# define SPRITE_2 "sprites/Pac-Man/pac_open_right.xpm"
+# define SPRITE_3 "sprites/Pac-Man/pac_open_left.xpm"
+# define SPRITE_4 "sprites/Pac-Man/pac_open_left.xpm"
+# define SPRITE_5 "sprites/Pac-Man/pac_open_down.xpm"
+# define SPRITE_6 "sprites/Pac-Man/pac_open_down.xpm"
+# define SPRITE_7 "sprites/Pac-Man/pac_open_up.xpm"
+# define SPRITE_8 "sprites/Pac-Man/pac_semi_up.xpm"
+# define SPRITE_9 "sprites/Pac-Man/pac_closed.xpm"
 // PAC-MAN DEATH
-# define sprite_10 "sprites/Pac-Man/Dying/pacman_dying1.xpm"
-# define sprite_11 "sprites/Pac-Man/Dying/pacman_dying2.xpm"
-# define sprite_12 "sprites/Pac-Man/Dying/pacman_dying4.xpm"
-# define sprite_13 "sprites/Pac-Man/Dying/pacman_dying6.xpm"
-# define sprite_14 "sprites/Pac-Man/Dying/pacman_dying8.xpm"
-# define sprite_15 "sprites/Pac-Man/Dying/pacman_woosh.xpm"
-# define sprite_16 "sprites/Pac-Man/Dying/pacman_dying10.xpm"
-# define sprite_17 "sprites/Pac-Man/Dying/pacman_dying3.xpm"
-# define sprite_18 "sprites/Pac-Man/Dying/pacman_dying5.xpm"
-# define sprite_19 "sprites/Pac-Man/Dying/pacman_dying7.xpm"
-# define sprite_20 "sprites/Pac-Man/Dying/pacman_dying9.xpm"
+# define SPRITE_10 "sprites/Pac-Man/Dying/pacman_dying1.xpm"
+# define SPRITE_11 "sprites/Pac-Man/Dying/pacman_dying2.xpm"
+# define SPRITE_12 "sprites/Pac-Man/Dying/pacman_dying4.xpm"
+# define SPRITE_13 "sprites/Pac-Man/Dying/pacman_dying6.xpm"
+# define SPRITE_14 "sprites/Pac-Man/Dying/pacman_dying8.xpm"
+# define SPRITE_15 "sprites/Pac-Man/Dying/pacman_woosh.xpm"
+# define SPRITE_16 "sprites/Pac-Man/Dying/pacman_dying10.xpm"
+# define SPRITE_17 "sprites/Pac-Man/Dying/pacman_dying3.xpm"
+# define SPRITE_18 "sprites/Pac-Man/Dying/pacman_dying5.xpm"
+# define SPRITE_19 "sprites/Pac-Man/Dying/pacman_dying7.xpm"
+# define SPRITE_20 "sprites/Pac-Man/Dying/pacman_dying9.xpm"
 // FONT
-# define sprite_21 "sprites/Other/Fonts/0.xpm"
-# define sprite_22 "sprites/Other/Fonts/1.xpm"
-# define sprite_23 "sprites/Other/Fonts/2.xpm"
-# define sprite_24 "sprites/Other/Fonts/3.xpm"
-# define sprite_25 "sprites/Other/Fonts/4.xpm"
-# define sprite_26 "sprites/Other/Fonts/5.xpm"
-# define sprite_27 "sprites/Other/Fonts/6.xpm"
-# define sprite_28 "sprites/Other/Fonts/7.xpm"
-# define sprite_29 "sprites/Other/Fonts/8.xpm"
-# define sprite_30 "sprites/Other/Fonts/9.xpm"
-# define sprite_31 "sprites/Other/Fonts/black.xpm"
+# define SPRITE_21 "sprites/Other/Fonts/0.xpm"
+# define SPRITE_22 "sprites/Other/Fonts/1.xpm"
+# define SPRITE_23 "sprites/Other/Fonts/2.xpm"
+# define SPRITE_24 "sprites/Other/Fonts/3.xpm"
+# define SPRITE_25 "sprites/Other/Fonts/4.xpm"
+# define SPRITE_26 "sprites/Other/Fonts/5.xpm"
+# define SPRITE_27 "sprites/Other/Fonts/6.xpm"
+# define SPRITE_28 "sprites/Other/Fonts/7.xpm"
+# define SPRITE_29 "sprites/Other/Fonts/8.xpm"
+# define SPRITE_30 "sprites/Other/Fonts/9.xpm"
+# define SPRITE_31 "sprites/Other/Fonts/black.xpm"
 // DOTS small - big
-# define sprite_32 "sprites/Other/Pacdots/pacdot_powerup.xpm"
-# define sprite_33 "sprites/Other/Portal/portal.xpm"
+# define SPRITE_32 "sprites/Other/Pacdots/pacdot_powerup.xpm"
+# define SPRITE_33 "sprites/Other/Portal/portal.xpm"
 // WALL
-# define sprite_34 "sprites/Other/Walls/black.xpm"
-# define sprite_35 "sprites/Other/Walls/wall.xpm"
+# define SPRITE_34 "sprites/Other/Walls/black.xpm"
+# define SPRITE_35 "sprites/Other/Walls/wall.xpm"
 // LOGO
-# define sprite_36 "sprites/Other/Logo/logo.xpm"
+# define SPRITE_36 "sprites/Other/Logo/logo.xpm"
 // GHOST
-# define sprite_37 "sprites/Ghosts/O/ghost_down1.xpm"
-# define sprite_38 "sprites/Ghosts/O/ghost_down2.xpm"
-# define sprite_39 "sprites/Ghosts/O/ghost_left1.xpm"
-# define sprite_40 "sprites/Ghosts/O/ghost_left2.xpm"
-# define sprite_41 "sprites/Ghosts/O/ghost_right1.xpm"
-# define sprite_42 "sprites/Ghosts/O/ghost_right2.xpm"
-# define sprite_43 "sprites/Ghosts/O/ghost_up1.xpm"
-# define sprite_44 "sprites/Ghosts/O/ghost_up2.xpm"
+# define SPRITE_37 "sprites/Ghosts/O/ghost_down1.xpm"
+# define SPRITE_38 "sprites/Ghosts/O/ghost_down2.xpm"
+# define SPRITE_39 "sprites/Ghosts/O/ghost_left1.xpm"
+# define SPRITE_40 "sprites/Ghosts/O/ghost_left2.xpm"
+# define SPRITE_41 "sprites/Ghosts/O/ghost_right1.xpm"
+# define SPRITE_42 "sprites/Ghosts/O/ghost_right2.xpm"
+# define SPRITE_43 "sprites/Ghosts/O/ghost_up1.xpm"
+# define SPRITE_44 "sprites/Ghosts/O/ghost_up2.xpm"
 //
 //
 //
@@ -155,9 +155,10 @@ typedef struct s_img
 	void	*img;
 	int		x;
 	int		y;
-}	t_img;
+}			t_img;
 
-typedef struct s_map {
+typedef struct s_map
+{
 	char	**p;
 	char	**p_c;
 	int		validated;
@@ -182,58 +183,59 @@ typedef struct s_map {
 	int		d;
 	int		e_found;
 	t_img	*sprites;
-}	t_map;
+}			t_map;
 
 typedef struct s_win
 {
 	void	*mlx;
 	void	*win;
 	t_map	map;
-}	t_win;
+}			t_win;
 
-int		exit_window(int value);
-int		key_hook(int keycode, t_win *win);
+int			exit_window(int value);
+int			key_hook(int keycode, t_win *win);
 
-int		init_images(t_win *win);
-void	print_img(t_win *win, int y, int x, int n);
-void	print_objects(t_win *win, int y, int x);
-void	put_base_map(t_win *win);
+int			init_images(t_win *win);
+void		print_img(t_win *win, int y, int x, int n);
+void		print_objects(t_win *win, int y, int x);
+void		put_base_map(t_win *win);
 
-int		correct_file(char *name);
-void	save_line(t_map *map, int fd);
-void	parsing(t_map *map);
+int			correct_file(char *name);
+void		save_line(t_map *map, int fd);
+void		parsing(t_map *map);
 
-void	check_map(t_win *win, int x, int y, int dir);
-void	print_paco(t_win *win, int y, int x, int dir);
-void	print_pac(t_win *win, int y, int x, int dir);
-void	movement(t_win *win, int y, int x, int dir);
+void		check_map(t_win *win, int x, int y, int dir);
+void		print_paco(t_win *win, int y, int x, int dir);
+void		print_pac(t_win *win, int y, int x, int dir);
+void		movement(t_win *win, int y, int x, int dir);
 
-void  ft_zero(t_map *map, int fd);
+void		ft_zero(t_map *map, int fd);
 // void  check_x(t_map *map);
-void	init_global1(char **sprites);
-void	init_global2(char **sprites);
-char	*get_path(int n);
+void		init_global1(char **sprites);
+void		init_global2(char **sprites);
+char		*get_path(int n);
 
-void  pacman_move(t_win *win, int dir);
-void  print_death(t_win *win);
-void  change_font(t_win *win);
-void	get_abc(t_win *win);
+void		pacman_move(t_win *win, int dir);
+void		pacman_move2(t_win *win, int dir);
+void		print_death(t_win *win);
+void		change_font(t_win *win);
+void		get_abc(t_win *win);
 
-void	end_map(t_win *win);
-void	floodfill(t_win *win, int y, int x, char *pass);
-void  last_checker(t_win *win, int x, int y);
+void		end_map(t_win *win);
+void		floodfill(t_win *win, int y, int x, char *pass);
+void		last_checker(t_win *win, int x, int y);
 
-void	is_it_one(t_map *map);
-void	freewilly(t_map *map, int y);
-void	floodfill2(t_win *win, int y, int x, char *pass);
+void		is_it_one(t_map *map, int x, int y);
+void		is_it_two(t_map *map, int x, int y);
+void		freewilly(t_map *map, int y);
+void		floodfill2(t_win *win, int y, int x, char *pass);
 
-char	*get_next_line(int fd);
+char		*get_next_line(int fd);
 //
-void	*ft_calloc(int count, int size);
-int		ft_strlen(const char *s);
-char	*ft_strjoin(char const *s1, char const *s2);
-int		checker(char *buffer);
-char	*ft_free(char *buffer, char *line);
+void		*ft_calloc(int count, int size);
+int			ft_strlen(const char *s);
+char		*ft_strjoin(char const *s1, char const *s2);
+int			checker(char *buffer);
+char		*ft_free(char *buffer, char *line);
 
 #endif
-

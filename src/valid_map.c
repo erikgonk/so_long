@@ -6,7 +6,7 @@
 /*   By: erigonza <erigonza@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/10 14:29:32 by erigonza          #+#    #+#             */
-/*   Updated: 2024/04/04 18:28:52 by erigonza         ###   ########.fr       */
+/*   Updated: 2024/04/09 17:51:58 by erigonza         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,17 +21,18 @@ int	correct_file(char *name)
 		i++;
 	if (name[i + 4])
 		return (0);
-	if (name[i] == '.' && name[i + 1] == 'b' &&
-			name[i + 2] == 'e' && name[i + 3] == 'r')
+	if (name[i] == '.' && name[i + 1] == 'b' && name[i + 2] == 'e')
+		return (1);
+	else if (name[i + 3] == 'r')
 		return (1);
 	return (0);
 }
 
 void	save_line(t_map *map, int fd)
 {
-	char            *tmp;
+	char	*tmp;
 
-	map->p = malloc(sizeof (t_map));
+	map->p = malloc(sizeof(t_map));
 	if (!map->p)
 		exit(ft_fd_printf(2, "ERROR MALLOC\n") * 0 + 1);
 	while (42 > 0)
@@ -40,17 +41,14 @@ void	save_line(t_map *map, int fd)
 		if (!tmp)
 			break ;
 		map->p[map->y_max] = ft_strdup(tmp);
-		free (tmp);
+		free(tmp);
 		if (!map->p[map->y_max])
-			exit (1);
+			exit(1);
 		if (map->p[map->y_max][0] == '\n')
 			exit(ft_fd_printf(2, "%s", ERROR_EMPTY_MAP) * 0 + 1);
 		if (!map->p[map->y_max++])
 			break ;
 	}
-	// int a = -1;
-	// while (map->p[++a])
-	// 	printf("%s\n", map->p[a]);
 	parsing(map);
 }
 
@@ -70,8 +68,8 @@ void	parsing(t_map *map)
 		}
 	}
 	map->y--;
-	if (map->p_count != 1 || map->e_count != 1 || map->c_count < 1 ||
-			map->g_count < 1)
+	if (map->p_count != 1 || map->e_count != 1 || map->c_count < 1
+		|| map->g_count < 1)
 		exit(ft_fd_printf(2, "%s", ERROR_ADD_REMOVE_OBJECTS) * 0 + 1);
-	is_it_one(map);
+	is_it_one(map, -1, -1);
 }

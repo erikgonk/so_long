@@ -6,7 +6,7 @@
 /*   By: erigonza <erigonza@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/30 16:05:09 by erigonza          #+#    #+#             */
-/*   Updated: 2024/04/04 18:28:31 by erigonza         ###   ########.fr       */
+/*   Updated: 2024/04/09 17:39:55 by erigonza         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,12 +17,12 @@ int	init_images(t_win *win)
 	int	i;
 
 	i = -1;
-	win->map.sprites = malloc (MAX_SPRITES * sizeof(t_img));
+	win->map.sprites = malloc(MAX_SPRITES * sizeof(t_img));
 	if (!win->map.sprites)
-		exit (ft_fd_printf(2, "%s", ERROR_MALLOC) * 0 + 1);
+		exit(ft_fd_printf(2, "%s", ERROR_MALLOC) * 0 + 1);
 	while (++i < MAX_SPRITES)
 	{
-		win->map.sprites[i].img = mlx_xpm_file_to_image(win->mlx, get_path(i), \
+		win->map.sprites[i].img = mlx_xpm_file_to_image(win->mlx, get_path(i),
 				&win->map.sprites[i].x, &win->map.sprites[i].y);
 		if (!win->map.sprites[i].img)
 			exit(ft_fd_printf(2, "ERROR\nImage") * 0 + 1);
@@ -41,11 +41,8 @@ void	print_img(t_win *win, int y, int x, int n)
 	mlx_put_image_to_window(win->mlx, win->win, win->map.sprites[n].img, y, x);
 }
 
-void print_objects(t_win *win, int y, int x)
+void	print_objects(t_win *win, int y, int x)
 {
-	// int f = 0;
-  // while (win->map.p[f])
-  	// ft_fd_printf(1, "%s", win->map.p[6]);
 	print_img(win, x, y, WALL_BLACK);
 	if (win->map.p[y][x] == '1')
 		print_img(win, x, y, WALL);
@@ -65,7 +62,7 @@ void print_objects(t_win *win, int y, int x)
 	}
 }
 
-void put_base_map(t_win *win)
+void	put_base_map(t_win *win)
 {
 	int	y;
 	int	x;

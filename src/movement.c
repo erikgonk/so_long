@@ -6,7 +6,7 @@
 /*   By: erigonza <erigonza@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/04 19:04:18 by erigonza          #+#    #+#             */
-/*   Updated: 2024/04/04 19:04:32 by erigonza         ###   ########.fr       */
+/*   Updated: 2024/04/09 17:41:28 by erigonza         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,9 +42,9 @@ void	print_paco(t_win *win, int y, int x, int dir)
 	}
 	else if (dir == LEFT)
 	{
-			print_img(win, win->map.p_x, win->map.p_y, WALL_BLACK);
-			print_img(win, ++x, y, WALL_BLACK);
-			print_img(win, win->map.p_x, win->map.p_y, PACMAN_9);
+		print_img(win, win->map.p_x, win->map.p_y, WALL_BLACK);
+		print_img(win, ++x, y, WALL_BLACK);
+		print_img(win, win->map.p_x, win->map.p_y, PACMAN_9);
 	}
 	else if (dir == UP)
 	{
@@ -59,6 +59,7 @@ void	print_paco(t_win *win, int y, int x, int dir)
 		print_img(win, win->map.p_x, win->map.p_y, PACMAN_9);
 	}
 }
+
 void	print_pac(t_win *win, int y, int x, int dir)
 {
 	if (dir == RIGHT)
@@ -69,9 +70,9 @@ void	print_pac(t_win *win, int y, int x, int dir)
 	}
 	else if (dir == LEFT)
 	{
-			print_img(win, win->map.p_x, win->map.p_y, WALL_BLACK);
-			print_img(win, ++x, y, WALL_BLACK);
-			print_img(win, win->map.p_x, win->map.p_y, PACMAN_L);
+		print_img(win, win->map.p_x, win->map.p_y, WALL_BLACK);
+		print_img(win, ++x, y, WALL_BLACK);
+		print_img(win, win->map.p_x, win->map.p_y, PACMAN_L);
 	}
 	else if (dir == UP)
 	{

@@ -6,7 +6,7 @@
 /*   By: erigonza <erigonza@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/12 13:18:04 by erigonza          #+#    #+#             */
-/*   Updated: 2024/04/04 18:37:04 by erigonza         ###   ########.fr       */
+/*   Updated: 2024/04/09 17:40:31 by erigonza         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,10 +32,11 @@ int	key_hook(int keycode, t_win *win)
 	return (0);
 }
 
-int main(int argc, char **argv)
+int	main(int argc, char **argv)
 {
-  int			fd;
-	t_win		win;
+	int		fd;
+	t_win	win;
+
 	fd = open(argv[1], O_RDONLY);
 	if (fd < 0)
 		exit(ft_fd_printf(2, "%s", ERROR_OPEN) * 0 + 1);
@@ -45,14 +46,15 @@ int main(int argc, char **argv)
 		exit(ft_fd_printf(2, "%s", ERROR_NAME) * 0 + 1);
 	ft_zero(&win.map, fd);
 	end_map(&win);
-  if (close(fd))
+	if (close(fd))
 		exit(ft_fd_printf(2, "%s", ERROR_CLOSE) * 0 + 1);
 	win.mlx = mlx_init();
 	init_images(&win);
-	win.win = mlx_new_window(win.mlx, (win.map.x_max * 34), ((win.map.y_max * 32) + 75), "so_long");
+	win.win = mlx_new_window(win.mlx, (win.map.x_max * 34), ((win.map.y_max
+					* 32) + 75), "so_long");
 	put_base_map(&win);
 	mlx_hook(win.win, 2, 0, key_hook, &win);
 	mlx_hook(win.win, 17, 0, exit_window, 0);
 	mlx_loop(win.mlx);
-  return (0);
+	return (0);
 }
