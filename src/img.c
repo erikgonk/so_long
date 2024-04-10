@@ -35,10 +35,21 @@ void	print_img(t_win *win, int y, int x, int n)
 	if ((n >= 0 && n <= 8) && win->map.moves != -1)
 		change_font(win);
 	if ((n >= 0 && n <= 8) && win->map.moves == -1)
+	{
 		win->map.moves++;
+	}
 	y = y * 32 + 25;
 	x = x * 32;
 	mlx_put_image_to_window(win->mlx, win->win, win->map.sprites[n].img, y, x);
+}
+
+void	extra_print(t_win *win)
+{
+	print_img(win, ((win->map.x_max / 2) - 3), (win->map.y_max + 1), FONT_0);
+	print_img(win, ((win->map.x_max / 2) - 1), (win->map.y_max + 1), FONT_0);
+	print_img(win, ((win->map.x_max / 2) + 1), (win->map.y_max + 1), FONT_0);
+	print_img(win, ((win->map.x_max / 2) + 3), (win->map.y_max + 1), FONT_0);
+	print_img(win, (win->map.x_max / 2) - 2, (win->map.y_max + 2), LOGO);
 }
 
 void	print_objects(t_win *win, int y, int x)
@@ -74,4 +85,5 @@ void	put_base_map(t_win *win)
 		while (++x < win->map.x_max)
 			print_objects(win, y, x);
 	}
+	extra_print(win);
 }

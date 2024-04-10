@@ -90,6 +90,7 @@ void	print_pac(t_win *win, int y, int x, int dir)
 
 void	movement(t_win *win, int y, int x, int dir)
 {
+	usleep(150000);
 	check_map(win, y, x, dir);
 	if (win->map.p[win->map.p_y][win->map.p_x] == 'C')
 	{

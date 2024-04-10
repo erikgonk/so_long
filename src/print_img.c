@@ -52,39 +52,23 @@ void	pacman_move2(t_win *win, int dir)
 
 void	print_death(t_win *win)
 {
-	int	i;
-
-	i = 9;
-	while (i++ <= 19)
-	{
-		print_img(win, 5, 5, DPACMAN_1);
-		usleep(10000);
-		print_img(win, 5, 5, DPACMAN_2);
-		usleep(10000);
-		print_img(win, 5, 5, DPACMAN_4);
-		usleep(10000);
-		print_img(win, 5, 5, DPACMAN_6);
-		usleep(10000);
-		print_img(win, 5, 5, DPACMAN_8);
-		usleep(10000);
-	}
 	(void)win;
-	printf("YOU LOST!\n");
+	ft_fd_printf(1, "YOU LOST!\n");
 	exit_window(1);
 }
 
 void	change_font(t_win *win)
 {
-	printf("moves -> %d\n", ++win->map.moves);
+	ft_fd_printf(1, "moves -> %d\n", ++win->map.moves);
 	get_abc(win);
-	print_img(win, 7, 8, FONT_B);
-	print_img(win, 9, 8, FONT_B);
-	print_img(win, 11, 8, FONT_B);
-	print_img(win, 13, 8, FONT_B);
-	print_img(win, 7, 8, win->map.a + 20);
-	print_img(win, 9, 8, win->map.b + 20);
-	print_img(win, 11, 8, win->map.c + 20);
-	print_img(win, 13, 8, win->map.d + 20);
+	print_img(win, ((win->map.x_max / 2) - 3), (win->map.y_max + 1), FONT_B);
+	print_img(win, ((win->map.x_max / 2) - 1), (win->map.y_max + 1), FONT_B);
+	print_img(win, ((win->map.x_max / 2) + 1), (win->map.y_max + 1), FONT_B);
+	print_img(win, ((win->map.x_max / 2) + 3), (win->map.y_max + 1), FONT_B);
+	print_img(win, ((win->map.x_max / 2) - 3), (win->map.y_max + 1), win->map.a + 20);
+	print_img(win, ((win->map.x_max / 2) - 1), (win->map.y_max + 1), win->map.b + 20);
+	print_img(win, ((win->map.x_max / 2) + 1), (win->map.y_max + 1), win->map.c + 20);
+	print_img(win, ((win->map.x_max / 2) + 3), (win->map.y_max + 1), win->map.d + 20);
 }
 
 void	get_abc(t_win *win)

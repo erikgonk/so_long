@@ -22,14 +22,37 @@ int	key_hook(int keycode, t_win *win)
 	if (keycode == 53)
 		exit_window(0);
 	else if (keycode == 126 || keycode == 13)
-		movement(win, (--win->map.p_y), win->map.p_x, UP);
+		win->map.move = 1;
 	else if (keycode == 124 || keycode == 2)
-		movement(win, win->map.p_y, (++win->map.p_x), RIGHT);
+		win->map.move = 2;
 	else if (keycode == 125 || keycode == 1)
-		movement(win, (++win->map.p_y), win->map.p_x, DOWN);
+		win->map.move = 3;
 	else if (keycode == 123 || keycode == 0)
+		win->map.move = 4;
+	return (0);
+}
+
+int	move_loop(t_win *win)
+{
+	if (win->map.move == 1)
+		movement(win, (--win->map.p_y), win->map.p_x, UP);
+	else if (win->map.move == 2)
+		movement(win, win->map.p_y, (++win->map.p_x), RIGHT);
+	else if (win->map.move == 3)
+		movement(win, (++win->map.p_y), win->map.p_x, DOWN);
+	else if (win->map.move == 4)
 		movement(win, win->map.p_y, (--win->map.p_x), LEFT);
 	return (0);
+}
+
+void	create_win(t_win *win)
+{
+	if (win->map.x_max < 10)
+		win->win = mlx_new_window(win->mlx, (10 * 34), ((win->map.y_max
+						* 32) + 100), "so_long");
+	else
+		win->win = mlx_new_window(win->mlx, (win->map.x_max * 34), ((win->map.y_max
+						* 32) + 100), "so_long");
 }
 
 int	main(int argc, char **argv)
@@ -50,10 +73,10 @@ int	main(int argc, char **argv)
 		exit(ft_fd_printf(2, "%s", ERROR_CLOSE) * 0 + 1);
 	win.mlx = mlx_init();
 	init_images(&win);
-	win.win = mlx_new_window(win.mlx, (win.map.x_max * 34), ((win.map.y_max
-					* 32) + 75), "so_long");
+	create_win(&win);
 	put_base_map(&win);
 	mlx_hook(win.win, 2, 0, key_hook, &win);
+	mlx_loop_hook(win.mlx, move_loop, &win);
 	mlx_hook(win.win, 17, 0, exit_window, 0);
 	mlx_loop(win.mlx);
 	return (0);

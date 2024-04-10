@@ -49,6 +49,7 @@ void	save_line(t_map *map, int fd)
 		if (!map->p[map->y_max++])
 			break ;
 	}
+
 	parsing(map);
 }
 

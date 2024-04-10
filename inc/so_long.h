@@ -182,6 +182,7 @@ typedef struct s_map
 	int		c;
 	int		d;
 	int		e_found;
+	int		move;
 	t_img	*sprites;
 }			t_map;
 
@@ -197,6 +198,7 @@ int			key_hook(int keycode, t_win *win);
 
 int			init_images(t_win *win);
 void		print_img(t_win *win, int y, int x, int n);
+void		extra_print(t_win *win);
 void		print_objects(t_win *win, int y, int x);
 void		put_base_map(t_win *win);
 
@@ -210,7 +212,6 @@ void		print_pac(t_win *win, int y, int x, int dir);
 void		movement(t_win *win, int y, int x, int dir);
 
 void		ft_zero(t_map *map, int fd);
-// void  check_x(t_map *map);
 void		init_global1(char **sprites);
 void		init_global2(char **sprites);
 char		*get_path(int n);
