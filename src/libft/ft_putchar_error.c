@@ -1,45 +1,40 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strmapi.c                                       :+:      :+:    :+:   */
+/*   ft_putchar.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: erigonza <erigonza@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/01/10 00:48:49 by erigonza          #+#    #+#             */
-/*   Updated: 2024/03/10 16:16:04 by erigonza         ###   ########.fr       */
+/*   Created: 2024/01/09 16:07:27 by erigonza          #+#    #+#             */
+/*   Updated: 2024/04/14 13:04:11 by erigonza         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-/*
-char example(unsigned int a, char b)
-{
-	return a + b;
-}
-*/
 
-char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
+int	ft_putchar_error(int fd, char c)
 {
-	size_t		i;
-	char		*str;
-	int			len;
-
-	i = 0;
-	len = ft_strlen2(s);
-	str = malloc(sizeof(char) * (len + 1));
-	if (!str)
-		return (NULL);
-	while (s[i])
-	{
-		str[i] = f(i, s[i]);
-		i++;
-	}
-	str[i] = '\0';
-	return (str);
+	return (write(fd, &c, 1));
 }
-/*
-int main(void)
-{
-	ft_strmapi("hola,mundo", example);
-	return 0;
-}*/
+
+// void	ft_bzero(void *s, size_t n)
+// {
+// 	while (n-- > 0)
+// 		*((unsigned char *)s++) = 0;
+// }
+// 
+// char	*ft_strchr2(const char *s, int c)
+// {
+// 	size_t		i;
+
+// 	i = 0;
+// 	while (s[i])
+// 	{
+// 		if (s[i] == (char)c)
+// 			return ((char *)(s + i));
+// 		i++;
+// 	}
+// 	if (s[i] == (char)c)
+// 		return ((char *)(s + i));
+// 	return (0);
+// }

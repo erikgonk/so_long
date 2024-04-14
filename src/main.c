@@ -6,7 +6,7 @@
 /*   By: erigonza <erigonza@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/12 13:18:04 by erigonza          #+#    #+#             */
-/*   Updated: 2024/04/09 17:40:31 by erigonza         ###   ########.fr       */
+/*   Updated: 2024/04/10 14:40:53 by erigonza         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,11 +48,11 @@ int	move_loop(t_win *win)
 void	create_win(t_win *win)
 {
 	if (win->map.x_max < 10)
-		win->win = mlx_new_window(win->mlx, (10 * 34), ((win->map.y_max
-						* 32) + 100), "so_long");
+		win->win = mlx_new_window(win->mlx, (10 * 34), ((win->map.y_max * 32)
+					+ 100), "so_long");
 	else
-		win->win = mlx_new_window(win->mlx, (win->map.x_max * 34), ((win->map.y_max
-						* 32) + 100), "so_long");
+		win->win = mlx_new_window(win->mlx, (win->map.x_max * 34),
+				((win->map.y_max * 32) + 100), "so_long");
 }
 
 int	main(int argc, char **argv)

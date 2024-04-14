@@ -10,66 +10,66 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../inc/so_long.h"
+#include "libft.h"
 
-void	*ft_calloc(int count, int size)
-{
-	void		*puntero;
-	char		*ch;
-	int			i;
+// void	*ft_calloc(int count, int size)
+// {
+// 	void		*puntero;
+// 	char		*ch;
+// 	int			i;
 
-	puntero = malloc((count * size) * sizeof (char));
-	if (!puntero)
-		return (NULL);
-	ch = puntero;
-	i = 0;
-	while (i < (count * size))
-	{
-		ch[i] = '\0';
-		i++;
-	}
-	return (puntero);
-}
+// 	puntero = malloc((count * size) * sizeof (char));
+// 	if (!puntero)
+// 		return (NULL);
+// 	ch = puntero;
+// 	i = 0;
+// 	while (i < (count * size))
+// 	{
+// 		ch[i] = '\0';
+// 		i++;
+// 	}
+// 	return (puntero);
+// }
 
-int	ft_strlen(const char *s)
-{
-	unsigned int	i;
+// int	ft_strlen(const char *s)
+// {
+// 	unsigned int	i;
 
-	if (!s)
-		return (0);
-	i = 0;
-	while (s[i])
-		i++;
-	return (i);
-}
+// 	if (!s)
+// 		return (0);
+// 	i = 0;
+// 	while (s[i])
+// 		i++;
+// 	return (i);
+// }
 
-char	*ft_strjoin(char const *s1, char const *s2)
-{
-	size_t		i;
-	size_t		j;
-	char		*str;
+// char	*ft_strjoin(char const *s1, char const *s2)
+// {
+// 	size_t		i;
+// 	size_t		j;
+// 	char		*str;
 
-	i = 0;
-	j = 0;
-	if (!(s1 && s2))
-		return (NULL);
-	str = malloc(sizeof(char) * (ft_strlen(s1) + ft_strlen(s2) + 1));
-	if (!str)
-		return (NULL);
-	while (s1[i])
-	{
-		str[i] = s1[i];
-		i++;
-	}
-	while (s2[j])
-	{
-		str[i] = s2[j];
-		i++;
-		j++;
-	}
-	str[i] = '\0';
-	return (str);
-}
+// 	i = 0;
+// 	j = 0;
+// 	if (!(s1 && s2))
+// 		return (NULL);
+// 	str = malloc(sizeof(char) * (ft_strlen(s1) + ft_strlen(s2) + 1));
+// 	if (!str)
+// 		return (NULL);
+// 	while (s1[i])
+// 	{
+// 		str[i] = s1[i];
+// 		i++;
+// 	}
+// 	while (s2[j])
+// 	{
+// 		str[i] = s2[j];
+// 		i++;
+// 		j++;
+// 	}
+// 	str[i] = '\0';
+// 	return (str);
+// }
 
 char	*ft_free(char *buffer, char *line)
 {

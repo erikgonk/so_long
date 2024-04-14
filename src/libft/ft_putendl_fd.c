@@ -1,33 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strdup.c                                        :+:      :+:    :+:   */
+/*   ft_putendl_fd.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: erigonza <erigonza@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/01/09 16:09:26 by erigonza          #+#    #+#             */
-/*   Updated: 2024/03/10 16:13:33 by erigonza         ###   ########.fr       */
+/*   Created: 2024/01/09 16:07:50 by erigonza          #+#    #+#             */
+/*   Updated: 2024/03/10 16:13:15 by erigonza         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_printf.h"
+#include "libft.h"
 
-char	*ft_strdup(const char *s1)
+void	ft_putendl_fd(char *s, int fd)
 {
-	char		*c;
-	char		*c_s1;
-	size_t		i;
-
-	c_s1 = (char *)s1;
-	c = (char *)malloc(ft_strlen2(c_s1) + 1);
-	if (!c)
-		return (0);
-	i = 0;
-	while (c_s1[i] != '\0')
-	{
-		c[i] = c_s1[i];
-		i++;
-	}
-	c[i] = '\0';
-	return (c);
+	write(fd, s, ft_strlen(s));
+	write(fd, "\n", 1);
 }
+
+/*
+int main(void)
+{
+	ft_putendl_fd("abc", 1);
+	return 0;
+}*/

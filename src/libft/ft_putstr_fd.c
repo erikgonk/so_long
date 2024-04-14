@@ -1,23 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlen.c                                        :+:      :+:    :+:   */
+/*   ft_putstr_fd.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: erigonza <erigonza@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/01/09 16:10:12 by erigonza          #+#    #+#             */
-/*   Updated: 2024/04/08 14:08:03 by erigonza         ###   ########.fr       */
+/*   Created: 2024/01/09 16:08:35 by erigonza          #+#    #+#             */
+/*   Updated: 2024/03/10 16:12:58 by erigonza         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_printf.h"
+#include "libft.h"
 
-size_t	ft_strlen2(const char *s)
+void	ft_putstr_fd(char *s, int fd)
 {
-	unsigned int	i;
-
-	i = 0;
-	while (s[i])
-		i++;
-	return (i);
+	write(fd, s, ft_strlen(s));
 }
+/*
+int main(void)
+{
+	ft_putstr_fd("abc", 1);
+}*/

@@ -6,7 +6,7 @@
 /*   By: erigonza <erigonza@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/05 19:27:32 by erigonza          #+#    #+#             */
-/*   Updated: 2024/04/09 18:15:25 by erigonza         ###   ########.fr       */
+/*   Updated: 2024/04/10 14:40:13 by erigonza         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -65,10 +65,14 @@ void	change_font(t_win *win)
 	print_img(win, ((win->map.x_max / 2) - 1), (win->map.y_max + 1), FONT_B);
 	print_img(win, ((win->map.x_max / 2) + 1), (win->map.y_max + 1), FONT_B);
 	print_img(win, ((win->map.x_max / 2) + 3), (win->map.y_max + 1), FONT_B);
-	print_img(win, ((win->map.x_max / 2) - 3), (win->map.y_max + 1), win->map.a + 20);
-	print_img(win, ((win->map.x_max / 2) - 1), (win->map.y_max + 1), win->map.b + 20);
-	print_img(win, ((win->map.x_max / 2) + 1), (win->map.y_max + 1), win->map.c + 20);
-	print_img(win, ((win->map.x_max / 2) + 3), (win->map.y_max + 1), win->map.d + 20);
+	print_img(win, ((win->map.x_max / 2) - 3), (win->map.y_max + 1), win->map.a
+		+ 20);
+	print_img(win, ((win->map.x_max / 2) - 1), (win->map.y_max + 1), win->map.b
+		+ 20);
+	print_img(win, ((win->map.x_max / 2) + 1), (win->map.y_max + 1), win->map.c
+		+ 20);
+	print_img(win, ((win->map.x_max / 2) + 3), (win->map.y_max + 1), win->map.d
+		+ 20);
 }
 
 void	get_abc(t_win *win)

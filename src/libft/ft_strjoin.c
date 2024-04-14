@@ -1,40 +1,50 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlcat.c                                       :+:      :+:    :+:   */
+/*   ft_strjoin.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: erigonza <erigonza@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/01/09 16:09:46 by erigonza          #+#    #+#             */
-/*   Updated: 2024/03/10 16:14:29 by erigonza         ###   ########.fr       */
+/*   Created: 2024/01/09 16:09:06 by erigonza          #+#    #+#             */
+/*   Updated: 2024/04/14 13:21:09 by erigonza         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-size_t	ft_strlcat(char *dst, const char *src, size_t dstsize)
+char	*ft_strjoin(char const *s1, char const *s2)
 {
 	size_t		i;
 	size_t		j;
-	size_t		len;
+	char		*str;
 
-	i = ft_strlen2(dst);
+	i = 0;
 	j = 0;
-	len = i;
-	while (src[j] && dstsize > i + 1)
-		dst[i++] = src[j++];
-	dst[i] = '\0';
-	if (ft_strlen2(dst) < dstsize)
-		return (len + ft_strlen2(src));
-	else
-		return (ft_strlen2(src) + dstsize);
+	if (!(s1 && s2))
+		return (0);
+	str = malloc(sizeof(char) * (ft_strlen(s1) + ft_strlen(s2) + 1));
+	if (!str)
+		return (0);
+	while (s1[i])
+	{
+		str[i] = s1[i];
+		i++;
+	}
+	while (s2[j])
+	{
+		str[i] = s2[j];
+		i++;
+		j++;
+	}
+	str[i] = '\0';
+	return (str);
 }
 /*
 #include <stdio.h>
 
-int main(int argc, char **argv)
+int main(void)
 {
-	(void)argc;
-	printf("%zu\n", ft_strlcat(argv[1], argv[2], (size_t)argv[3]));
-	return 0;
+	char *a = "";
+	char *b = "42";
+	printf("%s\n", ft_strjoin(a, b));
 }*/

@@ -13,7 +13,7 @@
 #ifndef SO_LONG_H
 # define SO_LONG_H
 
-# include "ft_printf.h"
+# include "libft.h"
 # include "mlx.h"
 # include <fcntl.h>
 # include <stdio.h>
@@ -160,6 +160,9 @@ typedef struct s_img
 typedef struct s_map
 {
 	char	**p;
+	char	*path;
+	char	*tmp;
+	int		line_count;
 	char	**p_c;
 	int		validated;
 	int		x;
@@ -230,13 +233,5 @@ void		is_it_one(t_map *map, int x, int y);
 void		is_it_two(t_map *map, int x, int y);
 void		freewilly(t_map *map, int y);
 void		floodfill2(t_win *win, int y, int x, char *pass);
-
-char		*get_next_line(int fd);
-//
-void		*ft_calloc(int count, int size);
-int			ft_strlen(const char *s);
-char		*ft_strjoin(char const *s1, char const *s2);
-int			checker(char *buffer);
-char		*ft_free(char *buffer, char *line);
 
 #endif

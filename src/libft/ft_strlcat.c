@@ -1,42 +1,40 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlcpy.c                                       :+:      :+:    :+:   */
+/*   ft_strlcat.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: erigonza <erigonza@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/01/09 16:10:00 by erigonza          #+#    #+#             */
-/*   Updated: 2024/03/10 16:14:05 by erigonza         ###   ########.fr       */
+/*   Created: 2024/01/09 16:09:46 by erigonza          #+#    #+#             */
+/*   Updated: 2024/03/10 16:14:29 by erigonza         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-size_t	ft_strlcpy(char *dst, const char *src, size_t dstsize)
+size_t	ft_strlcat(char *dst, const char *src, size_t dstsize)
 {
 	size_t		i;
+	size_t		j;
+	size_t		len;
 
-	i = 0;
-	if (dstsize == 0)
-		return (ft_strlen2(src));
-	while (src[i] && dstsize - 1 > i)
-	{
-		dst[i] = src[i];
-		i++;
-	}
+	i = ft_strlen(dst);
+	j = 0;
+	len = i;
+	while (src[j] && dstsize > i + 1)
+		dst[i++] = src[j++];
 	dst[i] = '\0';
-	return (ft_strlen2(src));
+	if (ft_strlen(dst) < dstsize)
+		return (len + ft_strlen(src));
+	else
+		return (ft_strlen(src) + dstsize);
 }
 /*
 #include <stdio.h>
 
 int main(int argc, char **argv)
 {
-	(void)argv
-	printf ("%zu\n", ft_strlcpy(a,"", 3));
-//	printf("%s\n", a);
-//	strlcpy(a, "", 3);
-//	printf("%s\n", a);
-//	ft_putnbr(i);
+	(void)argc;
+	printf("%zu\n", ft_strlcat(argv[1], argv[2], (size_t)argv[3]));
 	return 0;
 }*/

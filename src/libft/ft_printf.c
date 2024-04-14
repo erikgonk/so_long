@@ -6,11 +6,11 @@
 /*   By: erigonza <erigonza@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/01 13:10:08 by erigonza          #+#    #+#             */
-/*   Updated: 2024/03/17 14:16:54 by erigonza         ###   ########.fr       */
+/*   Updated: 2024/04/14 13:03:58 by erigonza         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_printf.h"
+#include "libft.h"
 
 static void	putstr(int fd, char *str, int *len)
 {
@@ -84,7 +84,7 @@ static void	putnb(long long int n, int base, char *c, int *len)
 	}
 }
 
-int	printea(int fd, const char str, int len, va_list args)
+static int	printea(int fd, const char str, int len, va_list args)
 {
 	char	*c;
 

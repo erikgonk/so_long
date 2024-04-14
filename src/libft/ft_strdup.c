@@ -1,40 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putchar.c                                       :+:      :+:    :+:   */
+/*   ft_strdup.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: erigonza <erigonza@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/01/09 16:07:27 by erigonza          #+#    #+#             */
-/*   Updated: 2024/03/21 17:14:14 by erigonza         ###   ########.fr       */
+/*   Created: 2024/01/09 16:09:26 by erigonza          #+#    #+#             */
+/*   Updated: 2024/03/10 16:13:33 by erigonza         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_printf.h"
+#include "libft.h"
 
-int	ft_putchar_error(int fd, char c)
+char	*ft_strdup(const char *s1)
 {
-	return (write(fd, &c, 1));
-}
-
-void	ft_bzero(void *s, size_t n)
-{
-	while (n-- > 0)
-		*((unsigned char *)s++) = 0;
-}
-
-char	*ft_strchr(const char *s, int c)
-{
+	char		*c;
+	char		*c_s1;
 	size_t		i;
 
+	c_s1 = (char *)s1;
+	c = (char *)malloc(ft_strlen(c_s1) + 1);
+	if (!c)
+		return (0);
 	i = 0;
-	while (s[i])
+	while (c_s1[i] != '\0')
 	{
-		if (s[i] == (char)c)
-			return ((char *)(s + i));
+		c[i] = c_s1[i];
 		i++;
 	}
-	if (s[i] == (char)c)
-		return ((char *)(s + i));
-	return (NULL);
+	c[i] = '\0';
+	return (c);
 }
