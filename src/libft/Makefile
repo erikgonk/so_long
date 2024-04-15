@@ -6,7 +6,7 @@
 #    By: erigonza <erigonza@student.42barcel>       +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/01/12 11:21:29 by erigonza          #+#    #+#              #
-#    Updated: 2024/04/14 12:56:16 by erigonza         ###   ########.fr        #
+#    Updated: 2024/04/15 18:45:04 by erigonza         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -53,7 +53,7 @@ bonus: $(OBJS) $(OBJS_BONUS)
 #-------------------------------------CLEAN------------------------------------#
 
 clean:
-	$(RM) $(NAME) $(OBJS) $(DEPS) $(OBJS_BONUS) $(DEPS_BONUS)
+	$(RM) $(OBJS) $(DEPS) $(OBJS_BONUS) $(DEPS_BONUS)
 
 fclean: clean
 	$(RM) $(NAME)

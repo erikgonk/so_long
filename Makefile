@@ -6,7 +6,7 @@
 #    By: erigonza <erigonza@student.42barcel>       +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/01/12 11:21:29 by erigonza          #+#    #+#              #
-#    Updated: 2024/04/03 13:23:02 by erigonza         ###   ########.fr        #
+#    Updated: 2024/04/15 18:46:10 by erigonza         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -66,12 +66,12 @@ clean:
 	$(RM) $(OBJS) $(DEPS) --no-print-directory
 	make clean -C $(MLX) --no-print-directory
 	make clean -C $(LIBFT) --no-print-directory
+	rm -fr so_long.dSYM --no-print-directory
 
 fclean: clean
 	$(RM) $(NAME) --no-print-directory
 	make fclean -C $(LIBFT) --no-print-directory
 	make clean -C $(MLX) --no-print-directory
-	rm -fr *.dSYM --no-print-directory
 
 re: fclean all
 
