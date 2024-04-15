@@ -6,7 +6,7 @@
 /*   By: erigonza <erigonza@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/08 14:14:03 by erigonza          #+#    #+#             */
-/*   Updated: 2024/04/10 14:38:46 by erigonza         ###   ########.fr       */
+/*   Updated: 2024/04/15 14:11:44 by erigonza         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@ void	is_it_one(t_map *map, int x, int y)
 			is_it_two(map, x, y);
 		}
 		if (map->p[y][0] != '1' || map->p[y][map->x_max - 1] != '1')
-			exit(ft_fd_printf(2, "%sSides\n%s", ERROR_MAP_NOT_CLOSED) * 0
+			exit(ft_fd_printf(2, "%sSides\n", ERROR_MAP_NOT_CLOSED) * 0
 				+ 1);
 	}
 	map->y--;
