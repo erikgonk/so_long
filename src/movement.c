@@ -88,9 +88,21 @@ void	print_pac(t_win *win, int y, int x, int dir)
 	}
 }
 
+void	continuamos(int dir, t_win *win)
+{
+	if (dir == UP && win->map.p[win->map.p_y - 1][win->map.p_x] != '1')
+		movement(win, (--win->map.p_y), win->map.p_x, UP);
+	else if (dir == RIGHT && win->map.p[win->map.p_y][win->map.p_x + 1] != '1')
+		movement(win, win->map.p_y, (++win->map.p_x), RIGHT);
+	else if (dir == DOWN && win->map.p[win->map.p_y + 1][win->map.p_x] != '1')
+		movement(win, (++win->map.p_y), win->map.p_x, DOWN);
+	else if (dir == LEFT && win->map.p[win->map.p_y][win->map.p_x - 1] != '1')
+		movement(win, win->map.p_y, (--win->map.p_x), LEFT);
+}
+
 void	movement(t_win *win, int y, int x, int dir)
 {
-	usleep(150000);
+	win->map.tmp2 = dir;
 	check_map(win, y, x, dir);
 	if (win->map.p[win->map.p_y][win->map.p_x] == 'C')
 	{

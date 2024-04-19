@@ -6,7 +6,7 @@
 /*   By: erigonza <erigonza@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/05 19:27:32 by erigonza          #+#    #+#             */
-/*   Updated: 2024/04/10 14:40:13 by erigonza         ###   ########.fr       */
+/*   Updated: 2024/04/19 11:56:09 by erigonza         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,7 +53,7 @@ void	pacman_move2(t_win *win, int dir)
 void	print_death(t_win *win)
 {
 	(void)win;
-	ft_fd_printf(1, "YOU LOST!\n");
+	ft_fd_printf(1, "Tan Comio, Pringao!\n");
 	exit_window(1);
 }
 

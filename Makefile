@@ -6,7 +6,7 @@
 #    By: erigonza <erigonza@student.42barcel>       +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/01/12 11:21:29 by erigonza          #+#    #+#              #
-#    Updated: 2024/04/15 18:46:10 by erigonza         ###   ########.fr        #
+#    Updated: 2024/04/19 11:52:55 by erigonza         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -45,21 +45,17 @@ RM = rm -fr
 all: $(MLX_A) $(NAME)
 
 $(MLX_A):
-	make -C $(LIBFT) --no-print-directory
 	make -C $(MLX) --no-print-directory
 
 $(NAME): $(OBJS) $(MLX_A) $(LIBFT_A)
 	$(CC) $(CFLAGS) -Imlx -Iinc -I$(LIBFT) $(LDFLAGS) $(LDLIBS) $(SRCS) -o $(NAME)
 
-$(OBJS): %.o: %.c Makefile
+$(OBJS): %.o: %.c Makefile libft
 	$(CC) $(CFLAGS) -Imlx -Iinc -I$(LIBFT) -MMD -MP -c -o $@ $<
 	echo -n "$(CLEAR_SCREEN)"
-#	echo "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n"
-#	echo "\t\t\t\t\t\t\t\t\t\t\t$(YELLOW)READY TO PLAY!!"
-#	echo "\t\t\t\t\t\t\t\t\t\t\t    👾🟡👻"
-#	echo "$(WHITE)"
-#	echo "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n"
 
+libft:
+	make -C $(LIBFT) --no-print-directory
 #-------------------------------------CLEAN------------------------------------#
 
 clean:
@@ -77,5 +73,5 @@ re: fclean all
 
 -include $(DEPS)
 
-.PHONY: all clean fclean re
+.PHONY: all clean fclean re libft
 .SILENT:

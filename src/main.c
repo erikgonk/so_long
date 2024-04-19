@@ -6,7 +6,7 @@
 /*   By: erigonza <erigonza@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/12 13:18:04 by erigonza          #+#    #+#             */
-/*   Updated: 2024/04/10 14:40:53 by erigonza         ###   ########.fr       */
+/*   Updated: 2024/04/19 17:13:46 by erigonza         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,9 +23,9 @@ int	key_hook(int keycode, t_win *win)
 		exit_window(0);
 	else if (keycode == 126 || keycode == 13)
 		win->map.move = 1;
-	else if (keycode == 124 || keycode == 2)
-		win->map.move = 2;
 	else if (keycode == 125 || keycode == 1)
+		win->map.move = 2;
+	else if (keycode == 124 || keycode == 2)
 		win->map.move = 3;
 	else if (keycode == 123 || keycode == 0)
 		win->map.move = 4;
@@ -34,14 +34,25 @@ int	key_hook(int keycode, t_win *win)
 
 int	move_loop(t_win *win)
 {
-	if (win->map.move == 1)
+	int		i;
+	int		x;
+	int		y;
+
+	i = 0;
+	while (i < 96999999)
+		i++;
+	x = win->map.p_x;
+	y = win->map.p_y;
+	if (win->map.move == UP && win->map.p[y - 1][x] != '1')
 		movement(win, (--win->map.p_y), win->map.p_x, UP);
-	else if (win->map.move == 2)
+	else if (win->map.move == RIGHT && win->map.p[y][x + 1] != '1')
 		movement(win, win->map.p_y, (++win->map.p_x), RIGHT);
-	else if (win->map.move == 3)
+	else if (win->map.move == DOWN && win->map.p[y + 1][x] != '1')
 		movement(win, (++win->map.p_y), win->map.p_x, DOWN);
-	else if (win->map.move == 4)
+	else if (win->map.move == LEFT && win->map.p[y][x - 1] != '1')
 		movement(win, win->map.p_y, (--win->map.p_x), LEFT);
+	else
+		continuamos(win->map.tmp2, win);
 	return (0);
 }
 

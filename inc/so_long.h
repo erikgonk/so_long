@@ -162,6 +162,7 @@ typedef struct s_map
 	char	**p;
 	char	*path;
 	char	*tmp;
+	int		tmp2;
 	int		line_count;
 	char	**p_c;
 	int		validated;
@@ -212,6 +213,7 @@ void		parsing(t_map *map);
 void		check_map(t_win *win, int x, int y, int dir);
 void		print_paco(t_win *win, int y, int x, int dir);
 void		print_pac(t_win *win, int y, int x, int dir);
+void	continuamos(int dir, t_win *win);
 void		movement(t_win *win, int y, int x, int dir);
 
 void		ft_zero(t_map *map, int fd);
