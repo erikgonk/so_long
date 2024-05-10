@@ -6,7 +6,7 @@
 #    By: erigonza <erigonza@student.42barcel>       +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/01/12 11:21:29 by erigonza          #+#    #+#              #
-#    Updated: 2024/04/19 11:52:55 by erigonza         ###   ########.fr        #
+#    Updated: 2024/05/10 14:03:04 by erigonza         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -42,7 +42,7 @@ RM = rm -fr
 
 #------------------------------------EXECUTE-----------------------------------#
 
-all: $(MLX_A) $(NAME)
+all: libft $(MLX_A) $(NAME)
 
 $(MLX_A):
 	make -C $(MLX) --no-print-directory
@@ -50,7 +50,7 @@ $(MLX_A):
 $(NAME): $(OBJS) $(MLX_A) $(LIBFT_A)
 	$(CC) $(CFLAGS) -Imlx -Iinc -I$(LIBFT) $(LDFLAGS) $(LDLIBS) $(SRCS) -o $(NAME)
 
-$(OBJS): %.o: %.c Makefile libft
+$(OBJS): %.o: %.c Makefile
 	$(CC) $(CFLAGS) -Imlx -Iinc -I$(LIBFT) -MMD -MP -c -o $@ $<
 	echo -n "$(CLEAR_SCREEN)"
 
