@@ -85,8 +85,8 @@ void	init_global2(char **sprites)
 	sprites[39] = SPRITE_40;
 	sprites[40] = SPRITE_41;
 	sprites[41] = SPRITE_42;
-	sprites[42] = SPRITE_42;
-	sprites[43] = SPRITE_42;
+	sprites[42] = SPRITE_43;
+	sprites[43] = SPRITE_44;
 }
 
 char	*get_path(int n)

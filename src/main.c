@@ -41,6 +41,7 @@ int	move_loop(t_win *win)
 	i = 0;
 	while (i < 96999999)
 		i++;
+	// ghosts_moving(win);
 	x = win->map.p_x;
 	y = win->map.p_y;
 	if (win->map.move == UP && win->map.p[y - 1][x] != '1')
@@ -60,10 +61,12 @@ void	create_win(t_win *win)
 {
 	if (win->map.x_max < 10)
 		win->win = mlx_new_window(win->mlx, (10 * 34), ((win->map.y_max * 32)
-					+ 100), "so_long");
+					+ 100), "PAC-MAN");
+	else if (win->map.x_max > 1080 || win->map.y_max > 1920)
+		exit (ft_fd_printf(2, "%s", ERROR_MAP_TOO_BIG) * 0 + 1);
 	else
 		win->win = mlx_new_window(win->mlx, (win->map.x_max * 34),
-				((win->map.y_max * 32) + 100), "so_long");
+				((win->map.y_max * 32) + 100), "PAC-MAN");
 }
 
 int	main(int argc, char **argv)

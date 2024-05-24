@@ -62,14 +62,14 @@
 //
 # define LOGO 35
 //
-# define GHOST_1 36
-# define GHOST_2 37
-# define GHOST_3 38
-# define GHOST_4 39
-# define GHOST_5 40
-# define GHOST_6 41
-# define GHOST_7 42
-# define GHOST_8 43
+# define GHOST_D1 36
+# define GHOST_D2 37
+# define GHOST_L1 38
+# define GHOST_L2 39
+# define GHOST_R1 40
+# define GHOST_R2 41
+# define GHOST_U1 42
+# define GHOST_U2 43
 //
 //
 //
@@ -149,6 +149,7 @@
 # define ERROR_ADD_REMOVE_OBJECTS "Error\nAdd Or Remove Objects\n"
 # define ERROR_MAP_NOT_CLOSED "Error\nThe Map Has An Excape\n"
 # define ERROR_MAP_E_NOT_FOUND "Error\nExit Not Found\n"
+# define ERROR_MAP_TOO_BIG "Error\nMap too big\n"
 
 typedef struct s_img
 {
@@ -159,42 +160,43 @@ typedef struct s_img
 
 typedef struct s_map
 {
-	char	**p;
-	char	*path;
-	char	*tmp;
-	int		tmp2;
-	int		line_count;
-	char	**p_c;
-	int		validated;
-	int		x;
-	int		x_max;
-	int		y;
-	int		y_max;
-	int		bol;
-	int		event;
-	int		p_count;
-	int		e_count;
-	int		c_count;
-	int		g_count;
-	int		p_x;
-	int		p_y;
-	int		points;
-	int		moves;
-	int		paroimpar;
-	int		a;
-	int		b;
-	int		c;
-	int		d;
-	int		e_found;
-	int		move;
-	t_img	*sprites;
+	char				**p;
+	int					ghosts[4];
+	char				*path;
+	char				*tmp;
+	int					tmp2;
+	int					line_count;
+	char				**p_c;
+	int					validated;
+	int					x;
+	int					x_max;
+	int					y;
+	int					y_max;
+	int					bol;
+	int					event;
+	int					p_count;
+	int					e_count;
+	int					c_count;
+	int					g_count;
+	int					p_x;
+	int					p_y;
+	int					points;
+	int					moves;
+	int					paroimpar;
+	int					a;
+	int					b;
+	int					c;
+	int					d;
+	int					e_found;
+	int					move;
+	t_img				*sprites;
 }			t_map;
 
 typedef struct s_win
 {
-	void	*mlx;
-	void	*win;
-	t_map	map;
+	void				*mlx;
+	void				*win;
+	t_map				map;
 }			t_win;
 
 int			exit_window(int value);
@@ -235,5 +237,7 @@ void		is_it_one(t_map *map, int x, int y);
 void		is_it_two(t_map *map, int x, int y);
 void		freewilly(t_map *map, int y);
 void		floodfill2(t_win *win, int y, int x, char *pass);
+// ghost
+void  ghosts_moving(t_win *win);
 
 #endif

@@ -80,21 +80,21 @@ void	get_abc(t_win *win)
 	win->map.a = 0;
 	win->map.b = 0;
 	win->map.c = 0;
-	win->map.d = win->map.moves;
+	win->map.d = 0;
 	if (win->map.moves > 999)
 	{
 		win->map.a = win->map.moves / 1000;
-		win->map.b = win->map.moves / 100;
-		win->map.c = (win->map.moves / 100) % 10;
+		win->map.b = (win->map.moves / 100) % 10;
+		win->map.c = (win->map.moves / 10) % 10;
 		win->map.d = win->map.moves % 10;
 	}
-	if (win->map.moves > 99)
+	else if (win->map.moves > 99)
 	{
 		win->map.b = win->map.moves / 100;
 		win->map.c = (win->map.moves / 10) % 10;
 		win->map.d = win->map.moves % 10;
 	}
-	if (win->map.moves > 9)
+	else if (win->map.moves > 9)
 	{
 		win->map.c = (win->map.moves / 10) % 10;
 		win->map.d = win->map.moves % 10;

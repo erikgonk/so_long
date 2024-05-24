@@ -10,10 +10,6 @@
 #                                                                              #
 # **************************************************************************** #
 
-YELLOW = \033[0;93m
-WHITE = \033[1m
-CLEAR_SCREEN = \x1b[1J \x1b[H
-
 #-----------------------------------VARIABLES----------------------------------#
 
 NAME = so_long
@@ -26,7 +22,8 @@ LIBFT = src/libft/
 LIBFT_A = $(addprefix $(LIBFT), libft.a)
 
 SRC_NAMES = main.c valid_map.c img.c zero.c movement.c print_img.c \
-			floodfill.c extra.c
+			floodfill.c extra.c \
+			ghosts.c
 
 SRCS = $(addprefix src/, $(SRC_NAMES))
 OBJS = $(SRCS:%.c=%.o)
@@ -52,7 +49,7 @@ $(NAME): $(OBJS) $(MLX_A) $(LIBFT_A)
 
 $(OBJS): %.o: %.c Makefile
 	$(CC) $(CFLAGS) -Imlx -Iinc -I$(LIBFT) -MMD -MP -c -o $@ $<
-	echo -n "$(CLEAR_SCREEN)"
+	clear
 
 libft:
 	make -C $(LIBFT) --no-print-directory

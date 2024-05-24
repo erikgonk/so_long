@@ -62,7 +62,7 @@ void	print_objects(t_win *win, int y, int x)
 	if (win->map.p[y][x] == 'C')
 		print_img(win, x, y, DOT);
 	if (win->map.p[y][x] == 'G')
-		print_img(win, x, y, GHOST_1);
+		print_img(win, x, y, GHOST_L1);
 	if (win->map.p[y][x] == '0')
 		print_img(win, x, y, WALL_BLACK);
 	if (win->map.p[y][x] == 'P')
