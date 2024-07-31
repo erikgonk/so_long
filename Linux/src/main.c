@@ -49,13 +49,15 @@ int	key_hook(int keycode, t_win *win)
 
 int	move_loop(t_win *win)
 {
-	int		i;
+//	int		i;
 	int		x;
 	int		y;
 
-	i = 0;
-	while (i < 96999999)
-		i++;
+//	i = 0;
+// norm does not approve usleep but works better 
+// while (i < 96999999)
+//		i++;
+	usleep(80000);
 	// ghosts_moving(win);
 	x = win->map.p_x;
 	y = win->map.p_y;
