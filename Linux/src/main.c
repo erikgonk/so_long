@@ -6,7 +6,7 @@
 /*   By: erigonza <erigonza@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/12 13:18:04 by erigonza          #+#    #+#             */
-/*   Updated: 2024/07/29 19:56:12 by erigonza         ###   ########.fr       */
+/*   Updated: 2025/04/01 11:55:32 by erigonza         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,21 +16,6 @@ int	exit_window(int value)
 {
 	exit(value);
 }
-/*
-int	key_hook(int keycode, t_win *win)
-{
-	if (keycode == 53)
-		exit_window(0);
-	else if (keycode == 126 || keycode == 13)
-		win->map.move = 1;
-	else if (keycode == 125 || keycode == 1)
-		win->map.move = 2;
-	else if (keycode == 124 || keycode == 2)
-		win->map.move = 3;
-	else if (keycode == 123 || keycode == 0)
-		win->map.move = 4;
-	return (0);
-}*/
 
 int	key_hook(int keycode, t_win *win)
 {
@@ -49,9 +34,9 @@ int	key_hook(int keycode, t_win *win)
 
 int	move_loop(t_win *win)
 {
-//	int		i;
 	int		x;
 	int		y;
+//	int		i;
 
 //	i = 0;
 // norm does not approve usleep but works better 

@@ -6,12 +6,12 @@
 #    By: erigonza <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/07/29 19:36:23 by erigonza          #+#    #+#              #
-#    Updated: 2024/07/29 19:42:15 by erigonza         ###   ########.fr        #
+#    Updated: 2025/04/01 11:55:54 by erigonza         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = so_long
-FLAGS = -Wall -Werror -Wextra #-g #-fsanitize=address 
+FLAGS = -Wall -Werror -Wextra -g #-fsanitize=address 
 
 INCLUDES = -I ./inc/\
            -I ./src/libft/\
@@ -43,10 +43,15 @@ clean:
 	rm -rf $(DIR_OBJ)
 	make clean -C ./src/libft/ --no-print-directory 
 	echo "DEPENDENCIES Erased :D"
-fclean: clean
+f fclean: clean
 	rm -rf $(NAME)
 	make fclean -C ./src/libft/ --no-print-directory 
 	echo "EVERYTHING Erased D:"
+
 re: fclean all
-.PHONY: fclean all clean re dir
+
+r run: all
+	./$(NAME) maps/classic.ber
+
+.PHONY: f fclean all clean re dir r run
 .SILENT:

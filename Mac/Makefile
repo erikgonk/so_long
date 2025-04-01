@@ -6,7 +6,7 @@
 #    By: erigonza <erigonza@student.42barcel>       +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/01/12 11:21:29 by erigonza          #+#    #+#              #
-#    Updated: 2024/05/10 14:03:04 by erigonza         ###   ########.fr        #
+#    Updated: 2025/04/01 11:56:23 by erigonza         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -61,14 +61,17 @@ clean:
 	make clean -C $(LIBFT) --no-print-directory
 	rm -fr so_long.dSYM --no-print-directory
 
-fclean: clean
+f fclean: clean
 	$(RM) $(NAME) --no-print-directory
 	make fclean -C $(LIBFT) --no-print-directory
 	make clean -C $(MLX) --no-print-directory
 
 re: fclean all
 
+r run: all
+	./$(NAME) maps/classic.ber
+
 -include $(DEPS)
 
-.PHONY: all clean fclean re libft
+.PHONY: f fclean all clean re dir r run
 .SILENT:
