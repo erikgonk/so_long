@@ -35,7 +35,7 @@ The goal of **SoLong** is to build an interactive 2D game using basic programmin
 
 1. Clone the repository:
    ```bash
-   git clone https://github.com/yourusername/SoLong.git && cd SoLong
+   git clone https://github.com/erikgonk/so_long.git && cd SoLong
  
 
 2. Execute it:
