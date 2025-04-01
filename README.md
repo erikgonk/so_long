@@ -1,4 +1,4 @@
-# SoLong - 42 School Project
+# SoLong - PACMAN
 
 **SoLong** is a 2D game developed as part of the 42 curriculum. The game focuses on basic game mechanics and graphical rendering, providing an introduction to interactive applications. It implements a simple player-controlled character navigating through a maze-like environment while avoiding obstacles and enemies. The project aims to enhance skills in C programming, graphical libraries, and game logic.
 
